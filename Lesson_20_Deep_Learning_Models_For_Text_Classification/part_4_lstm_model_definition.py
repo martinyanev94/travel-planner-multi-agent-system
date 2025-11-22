@@ -1,0 +1,5 @@
+model = Sequential()
+model.add(Embedding(input_dim=X_train_tfidf.shape[1], output_dim=128, input_length=X_train_tfidf.shape[1]))
+model.add(LSTM(units=64, return_sequences=False))
+model.add(Dense(units=1, activation='sigmoid'))
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
